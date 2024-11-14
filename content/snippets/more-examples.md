@@ -1,6 +1,6 @@
 Title: Example Post
 Date: 2024-11-14
-Category: Markdown Tutorial
+Category: snippets
 Tags: pelican, markdown, tutorial
 Slug: example-post
 Author: ChatGPT 4o
