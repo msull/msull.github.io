@@ -83,7 +83,7 @@ Add images to your posts using:
 ![Alt text](https://example.com/image.jpg)
 ```
 
-![Pelican Logo](https://upload.wikimedia.org/wikipedia/commons/8/8c/Pelican_logo.png)
+![Pelican Logo](https://docs.getpelican.com/en/latest/_static/pelican-logo.svg)
 
 ## Code Blocks
 

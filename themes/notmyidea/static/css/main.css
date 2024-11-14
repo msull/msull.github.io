@@ -20,12 +20,44 @@ body {
     background: #F5F4EF;
     color: #000305;
     /*font-size: 87.5%;  Base font size: 14px */
-    font-family: "Magdelin", 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 110%;
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
     line-height: 1.429;
     margin: 0;
     padding: 0;
     text-align: left;
 }
+
+
+table {
+            /*table-layout: auto;*/
+            /*width: 100%;*/
+            border-collapse: collapse;
+            border: 3px solid dimgray;
+        }
+
+        thead th, tfoot th, tfoot td {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+            border: 1px solid dimgray;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            letter-spacing: 2px;
+        }
+
+        td {
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
 
 /* Headings */
 h1 {font-size: 2em }
@@ -105,6 +137,30 @@ dt {font-weight: bold;}
 dd {margin-left: 1.5em;}
 
 pre{background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow: auto;}
+
+pre {
+	max-width: 100%;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	word-wrap: normal;
+	word-break: normal;
+}
+
+pre {
+	line-height: 1.4286em;
+}
+
+code, pre {
+	font-family: "SF Mono", Menlo, "Courier New", Courier, monospace;
+	font-size: 1em;
+	-webkit-hyphens: none;
+}
+
+pre code {
+	letter-spacing: -.027em;
+	font-size: 0.9375em;
+}
 
 /* Quotes */
 blockquote {
