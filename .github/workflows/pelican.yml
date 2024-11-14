@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
     - name: Compile with pelican
       run: |
-          pelican content -s publishconfig.py
+          pelican content -s publishconf.py
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' }}
