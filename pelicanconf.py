@@ -53,6 +53,7 @@ DIRECT_TEMPLATES = [
     "authors",
     "archives",
     "404",
+    "pyodide",
 ]
 # DIRECT_TEMPLATES = [
 #     "index",
