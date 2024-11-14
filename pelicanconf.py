@@ -1,12 +1,12 @@
-AUTHOR = 'Sully'
+AUTHOR = "Sully"
 SITENAME = "Sully's Blog"
 SITEURL = ""
 
 PATH = "content"
 
-TIMEZONE = 'America/Los_Angeles'
+TIMEZONE = "America/Los_Angeles"
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = "en"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -24,13 +24,11 @@ LINKS = (
 )
 
 PLUGINS = [
-    'neighbors', # find next, previous article
+    "neighbors",  # find next, previous article
 ]
 
 # Social widget
-SOCIAL = (
-    ("linkedin", "https://www.linkedin.com/in/msullenberger/"),
-)
+SOCIAL = (("linkedin", "https://www.linkedin.com/in/msullenberger/"),)
 
 DEFAULT_PAGINATION = 25
 
@@ -45,11 +43,19 @@ THEME = "themes/notmyidea"
 # PAGE_PATHS = [
 #     'pages'
 # ]
+DIRECT_TEMPLATES = [
+    "index",
+    "tags",
+    "categories",
+    "authors",
+    "archives",
+    "404",
+]
 # DIRECT_TEMPLATES = [
-#     'index',
-#     'authors',
-#     'categories',
-#     'tags',
-#     'archives',
-#     '404',
+#     "index",
+#     "authors",
+#     "categories",
+#     "tags",
+#     "archives",
+#     "404",
 # ]
