@@ -1,5 +1,5 @@
 AUTHOR = "Sully"
-SITENAME = "Sully's Blog"
+SITENAME = "Sully's Page"
 SITEURL = ""
 
 PATH = "content"
@@ -28,7 +28,10 @@ PLUGINS = [
 ]
 
 # Social widget
-SOCIAL = (("linkedin", "https://www.linkedin.com/in/msullenberger/"),)
+SOCIAL = (
+    ("linkedin", "https://www.linkedin.com/in/msullenberger/"),
+    ("github", "https://github.com/msull/"),
+)
 
 DEFAULT_PAGINATION = 25
 

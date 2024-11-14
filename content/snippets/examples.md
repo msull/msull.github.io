@@ -1,6 +1,7 @@
-Title: Examples
+Title: Basic post examples
 Date: 2024-11-14
 Category: snippets
+Tags: pelican, markdown
 
 Learning how to use Pelican. This is an example / reference page for linking and formatting.
 

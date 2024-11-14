@@ -1,8 +1,8 @@
-Title: Example Post
+Title: More examples
 Date: 2024-11-14
 Category: snippets
 Tags: pelican, markdown, tutorial
-Slug: example-post
+Slug: more-examples
 Author: ChatGPT 4o
 Summary: A quick overview of markdown formatting in Pelican.
 
