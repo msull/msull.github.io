@@ -30,7 +30,6 @@ PLUGINS = [
 # Social widget
 SOCIAL = (
     ("linkedin", "https://www.linkedin.com/in/msullenberger/"),
-    ("Another social link", "#"),
 )
 
 DEFAULT_PAGINATION = 25
