@@ -17,9 +17,9 @@ jobs:
       - uses: actions/setup-python@v3
       - name: Install Stork
         run: |
-          curl -fsSL https://files.stork-search.net/releases/latest/stork-ubuntu-latest -o stork
-          chmod +x stork
-          mv stork /usr/local/bin/
+          wget https://files.stork-search.net/releases/v1.6.0/stork-ubuntu-20-04
+          chmod +x stork-ubuntu-20-04
+          mv stork-ubuntu-20-04 /usr/local/bin/stork
       - name: Install dependencies and theme
         run: |
           echo "Install dependencies"
