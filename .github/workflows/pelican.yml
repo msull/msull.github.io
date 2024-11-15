@@ -13,20 +13,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - name: Install dependencies and theme
-      run: |
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install Stork
+        run: |
+          curl -fsSL https://files.stork-search.net/releases/latest/stork-ubuntu-latest -o stork
+          chmod +x stork
+          mv stork /usr/local/bin/
+      - name: Install dependencies and theme
+        run: |
           echo "Install dependencies"
           pip install -r requirements.txt
-    - name: Compile with pelican
-      run: |
+      - name: Compile with pelican
+        run: |
           pelican content -s publishconf.py
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: ${{ github.ref == 'refs/heads/main' }}
-      with:
-        github_token: ${{ secrets.PUBLISH_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: blog-output/
-        force_orphan: true
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.PUBLISH_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: blog-output/
+          force_orphan: true
