@@ -25,6 +25,7 @@ LINKS = (
 
 PLUGINS = [
     "neighbors",  # find next, previous article
+    "search",
 ]
 
 # Social widget
@@ -42,10 +43,13 @@ OUTPUT_PATH = "blog-output"
 DELETE_OUTPUT_DIRECTORY = True
 
 STATIC_PATHS = ["images"]
-THEME = "themes/notmyidea"
-# PAGE_PATHS = [
-#     'pages'
-# ]
+THEME = "themes/elegant"
+
+TAGS_URL = "tags"
+CATEGORIES_URL = "categories"
+ARCHIVES_URL = "archives"
+
+
 DIRECT_TEMPLATES = [
     "index",
     "tags",
