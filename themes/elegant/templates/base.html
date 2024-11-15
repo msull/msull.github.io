@@ -89,7 +89,8 @@
             <li {% if page_name==
             'archives' %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
           </ul>
-          Search: <input data-stork="sitesearch"/>
+
+          <input id="site-search" placeholder="Search..." data-stork="sitesearch" type="text"/>
           <div data-stork="sitesearch-output"></div>
         </div>
       </div>
@@ -121,12 +122,14 @@
             }
 
 
+
 </script>
 {% endblock script %}
 {% include '_includes/stat_counter.html' %}
 <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script>
 <script>
     stork.register("sitesearch", "{{ SITEURL }}/search-index.st");
+
 
 
 </script>

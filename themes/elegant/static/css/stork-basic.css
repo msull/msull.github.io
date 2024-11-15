@@ -20,6 +20,10 @@
   --stork-results-border-color: var(--stork-border-color);
 }
 
+#site-search {
+  margin-top: 6px; /* Adjust the value as needed */
+}
+
 .stork-wrapper {
   position: relative;
   font-family: var(--stork-font-family);
@@ -60,7 +64,6 @@
   background-color: var(--stork-accent-color);
   box-shadow: 0 0 8px var(--stork-accent-color);
   height: 1px;
-  transition: width 0.25s ease, opacity 0.4s ease 0.4s;
 }
 
 .stork-output {
