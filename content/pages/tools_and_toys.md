@@ -9,4 +9,4 @@ Title: Tools and Toys
 
 # Misc
 
-* [Pyodide](/pyodide) Simple Pyodide page for quick python execution
+* [Pyodide](/extra/pyodide) Simple Pyodide page for quick python execution

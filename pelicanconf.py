@@ -43,12 +43,24 @@ OUTPUT_PATH = "blog-output"
 DELETE_OUTPUT_DIRECTORY = True
 
 STATIC_PATHS = ["images"]
+
+TEMPLATE_PAGES = {
+    "extra/api_explorer.html": "extra/api_explorer.html",
+    "extra/pyodide.html": "extra/pyodide.html",
+    # "src/resume.html": "dest/resume.html",
+    # "src/contact.html": "dest/contact.html",
+}
+# EXTRA_PATH_METADATA = {
+#     "": {"path": "api_explorer.html"},
+#     "extra/pyodide.html": {"path": "pyodide.html"},
+# }
 THEME = "themes/elegant"
 
 TAGS_URL = "tags"
 CATEGORIES_URL = "categories"
 ARCHIVES_URL = "archives"
 
+IGNORE_FILES = ["*.html"]
 
 DIRECT_TEMPLATES = [
     "index",
@@ -57,7 +69,6 @@ DIRECT_TEMPLATES = [
     "authors",
     "archives",
     "404",
-    "pyodide",
 ]
 # DIRECT_TEMPLATES = [
 #     "index",
