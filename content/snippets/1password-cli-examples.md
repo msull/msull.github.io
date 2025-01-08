@@ -89,3 +89,106 @@ op vault list
 # Search for items
 op item list --query "database"
 ```
+Here's the revised version of your update, with improved grammar, flow, and formatting:
+
+---
+
+## Update on 2025-01-08
+
+Recently, I integrated the CLI usage of the `op` tool into a Python Streamlit app that I run locally on my MacBook. This integration allows me to securely manage Google credentials and an OAuth token, enabling programmatic access to my Google Calendars. Here's how I achieved it:
+
+### Python Code Example
+
+The following code snippet demonstrates how I retrieve credentials and tokens from 1Password, use them to initialize a calendar access class, and then update the token back to 1Password if it changes:
+
+```python
+from tempfile import NamedTemporaryFile
+import subprocess
+import json
+import os
+from supersullytools.gcalendar_access import GoogleCalendarDataAccess
+
+
+def get_calendar_access():
+    """
+    Fetches Google OAuth credentials from 1Password, writes them to temporary files,
+    initializes GoogleCalendarDataAccess, and updates the token back to 1Password if needed.
+    """
+
+    def op_get_field(item_name: str, field_name: str):
+        """
+        Uses the 1Password CLI (`op`) to retrieve the raw JSON content of a specified field.
+        """
+        cmd = [
+            "op",
+            "item",
+            "get",
+            item_name,
+            "--fields",
+            field_name,
+            "--format",
+            "json",
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return json.loads(result.stdout)["value"]  # Returns the field's raw JSON content
+
+    def op_set_field(item_name: str, field_name: str, new_value: str) -> bool:
+        """
+        Updates the content of a specific field in a 1Password item using the `op` CLI.
+        Returns True if successful, otherwise False.
+        """
+        cmd = ["op", "item", "edit", item_name, f"{field_name}={new_value}"]
+        try:
+            subprocess.run(cmd, capture_output=True, text=True, check=True)
+            return True
+        except subprocess.CalledProcessError as e:
+            print(f"Error updating 1Password field: {e}")
+            return False
+
+    # Retrieve the credentials and token JSON from 1Password
+    creds_json = op_get_field(
+        os.environ["ONEPASS_GOOGLE_CREDS_ITEM"],  # Adjust item name/ID as needed
+        "notesPlain",  # json str stored in a Secure Note
+    )
+
+    token_json = op_get_field(
+        os.environ["ONEPASS_GOOGLE_TOKEN_ITEM"],  # Adjust item name/ID as needed
+        "notesPlain",  # json str stored in a Secure Note
+    )
+
+    # Write the credentials and token to temporary files
+    with NamedTemporaryFile(mode="w+") as tmp_file1, NamedTemporaryFile(mode="w+") as tmp_file2:
+        tmp_file1.write(creds_json)
+        tmp_file1.flush()
+        tmp_file1.seek(0)
+        temp_credentials_path = tmp_file1.name
+
+        tmp_file2.write(token_json)
+        tmp_file2.flush()
+        tmp_file2.seek(0)
+        temp_token_path = tmp_file2.name
+
+        # Initialize the GoogleCalendarDataAccess class
+        calendar = GoogleCalendarDataAccess(
+            credentials_file=temp_credentials_path,
+            token_file=temp_token_path,
+            default_calendar_id=os.environ["EVENT_CALENDAR_ID"],
+            fallback_timezone="America/Los_Angeles",
+        )
+
+        # Check if the token was updated and save it back to 1Password if necessary
+        tmp_file2.seek(0)
+        updated_token_json = tmp_file2.read()
+        if updated_token_json != token_json:
+            op_set_field(
+                os.environ["ONEPASS_GOOGLE_TOKEN_ITEM"],  # Adjust item name/ID as needed
+                "notesPlain",  # json str stored in a Secure Note
+                updated_token_json,
+            )
+
+    return calendar
+```
+
+A really cool benefit of this is that it automatically integrates into the 1password Biometrics / fingerprint scanner on my Macbook when it needs to regain access to the protected items
+
+![1passbio.png](1passbio.png)
