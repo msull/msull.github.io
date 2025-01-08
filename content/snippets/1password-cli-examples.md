@@ -191,4 +191,4 @@ def get_calendar_access():
 
 A really cool benefit of this is that it automatically integrates into the 1password Biometrics / fingerprint scanner on my Macbook when it needs to regain access to the protected items
 
-![1passbio.png](1passbio.png)
+![1passbio.png]({attach}1passbio.png)
