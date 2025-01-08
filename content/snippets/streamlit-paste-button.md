@@ -11,4 +11,4 @@ component:
 
 This component proved easy to work with, and I was able to incorporate it into my app exactly as hoped.
 
-![img.png](paste-button-example.png)
+![paste-button-example.png](paste-button-example.png)
