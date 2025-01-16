@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -23,8 +23,6 @@ jobs:
       - name: Install dependencies and theme
         run: |
           echo "Install dependencies"
-          sudo apt-get update
-          sudo apt-get install -y libssl1.1
           pip install -r requirements.txt
       - name: Compile with pelican
         run: |
