@@ -12,4 +12,4 @@ Title: Tools and Toys
 # Misc
 
 * [Pyodide](/extra/pyodide) Simple Pyodide page for quick python execution
-* [Simple Image Editor](/extra/pyodide) Simple in-browser (Streamlit / Stlite) image editor
+* [Simple Image Editor](/extra/imageEdit) Simple in-browser (Streamlit / Stlite) image editor
