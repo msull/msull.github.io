@@ -47,6 +47,7 @@ STATIC_PATHS = ["images"]
 TEMPLATE_PAGES = {
     "extra/api_explorer.html": "extra/api_explorer.html",
     "extra/pyodide.html": "extra/pyodide.html",
+    "extra/imageEdit.html": "extra/imageEdit.html",
     # "src/resume.html": "dest/resume.html",
     # "src/contact.html": "dest/contact.html",
 }
