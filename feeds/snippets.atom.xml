@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Sully's Page - snippets</title><link href="https://msull.github.io/" rel="alternate"></link><link href="https://msull.github.io/feeds/snippets.atom.xml" rel="self"></link><id>https://msull.github.io/</id><updated>2025-02-03T09:23:00-08:00</updated><entry><title>Streamlit Audix Component</title><link href="https://msull.github.io/streamlit-audix-component.html" rel="alternate"></link><published>2025-02-03T09:23:00-08:00</published><updated>2025-02-03T09:23:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2025-02-03:/streamlit-audix-component.html</id><content type="html">&lt;p&gt;Came across this nice looking audio component:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="https://github.com/keli-wen/streamlit-advanced-audio/raw/master/assets/demo.gif"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/keli-wen/streamlit-advanced-audio&lt;/li&gt;
+&lt;li&gt;https://advanced-audio-example.streamlit.app/&lt;/li&gt;
+&lt;/ul&gt;</content><category term="snippets"></category><category term="streamlit"></category></entry><entry><title>Python List Comprehensions Reference</title><link href="https://msull.github.io/python-list-comprehensions-reference.html" rel="alternate"></link><published>2025-01-16T12:00:00-08:00</published><updated>2025-01-16T12:00:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2025-01-16:/python-list-comprehensions-reference.html</id><summary type="html">&lt;h2&gt;Python List Comprehensions Demo&lt;/h2&gt;
+&lt;p&gt;List comprehensions provide a concise way to create lists in Python. Here are some practical examples:&lt;/p&gt;
+&lt;h3&gt;1. Basic List Comprehension&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Create a list of squares&lt;/span&gt;
+&lt;span class="n"&gt;squares&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;squares&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Convert …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Python List Comprehensions Demo&lt;/h2&gt;
+&lt;p&gt;List comprehensions provide a concise way to create lists in Python. Here are some practical examples:&lt;/p&gt;
+&lt;h3&gt;1. Basic List Comprehension&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Create a list of squares&lt;/span&gt;
+&lt;span class="n"&gt;squares&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;squares&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Convert temperatures (Celsius to Fahrenheit)&lt;/span&gt;
+&lt;span class="n"&gt;celsius&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;fahrenheit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;temp&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;32&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;temp&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;celsius&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fahrenheit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [32.0, 50.0, 68.0, 86.0, 104.0]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2. Filtering with Comprehensions&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get even numbers from a list&lt;/span&gt;
+&lt;span class="n"&gt;numbers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;even_numbers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;numbers&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;even_numbers&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [2, 4, 6, 8, 10]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;3. Nested List Comprehension&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Create a matrix&lt;/span&gt;
+&lt;span class="n"&gt;matrix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;matrix&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [[0, 1, 2], [0, 1, 2], [0, 1, 2]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;4. String Manipulation&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Convert words to uppercase&lt;/span&gt;
+&lt;span class="n"&gt;words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;world&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;uppercase_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;word&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;uppercase_words&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# [&amp;#39;HELLO&amp;#39;, &amp;#39;WORLD&amp;#39;, &amp;#39;PYTHON&amp;#39;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Key Takeaways&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;List comprehensions offer a compact syntax for list creation&lt;/li&gt;
+&lt;li&gt;They can include filtering conditions&lt;/li&gt;
+&lt;li&gt;They can transform elements during creation&lt;/li&gt;
+&lt;li&gt;They can be nested for more complex operations&lt;/li&gt;
+&lt;/ul&gt;</content><category term="snippets"></category><category term="python"></category><category term="guides"></category></entry><entry><title>Streamlit Paste Button</title><link href="https://msull.github.io/streamlit-paste-button.html" rel="alternate"></link><published>2025-01-06T15:04:00-08:00</published><updated>2025-01-06T15:04:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2025-01-06:/streamlit-paste-button.html</id><content type="html">&lt;p&gt;I was looking for a way to paste images directly into a Streamlit app and came across the "Streamlit Paste Button"
+component:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/olucaslopes/streamlit-paste-button/"&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paste-button.streamlit.app/"&gt;Demo Page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This component proved easy to work with, and I was able to incorporate it into my app exactly as hoped.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="https://msull.github.io/paste-button-example.png"&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="streamlit"></category></entry><entry><title>Adding a Sync Version to Async Functions</title><link href="https://msull.github.io/adding-a-sync-version-to-async-functions.html" rel="alternate"></link><published>2024-11-19T21:39:00-08:00</published><updated>2024-11-19T21:39:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-19:/adding-a-sync-version-to-async-functions.html</id><summary type="html">&lt;p&gt;Sometimes you need to call an async function synchronously. This &lt;code&gt;add_sync_version&lt;/code&gt; decorator makes it straightforward
+by adding a &lt;code&gt;.sync&lt;/code&gt; attribute to your async function. The &lt;code&gt;.sync&lt;/code&gt; version
+uses &lt;code&gt;asyncio.new_event_loop().run_until_complete&lt;/code&gt; to run the async code in a blocking way. Just decorate your function
+with &lt;code&gt;@add_sync_version&lt;/code&gt;, and you can call …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Sometimes you need to call an async function synchronously. This &lt;code&gt;add_sync_version&lt;/code&gt; decorator makes it straightforward
+by adding a &lt;code&gt;.sync&lt;/code&gt; attribute to your async function. The &lt;code&gt;.sync&lt;/code&gt; version
+uses &lt;code&gt;asyncio.new_event_loop().run_until_complete&lt;/code&gt; to run the async code in a blocking way. Just decorate your function
+with &lt;code&gt;@add_sync_version&lt;/code&gt;, and you can call &lt;code&gt;func.sync(*args, **kwargs)&lt;/code&gt; when sync access is needed. Inspired by
+Guido's &lt;a href="https://discuss.python.org/t/how-can-async-support-dispatch-between-sync-and-async-variants-of-the-same-code/15014/7"&gt;comment here&lt;/a&gt;
+, it’s a simple way to handle mixed async and sync requirements.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;asyncio&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;functools&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;add_sync_version&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Decorator that adds a `.sync` attribute to an async function, allowing it &lt;/span&gt;
+&lt;span class="sd"&gt;    to be called synchronously. The synchronous version uses a new event loop &lt;/span&gt;
+&lt;span class="sd"&gt;    to run the async function.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    Example:&lt;/span&gt;
+&lt;span class="sd"&gt;        @add_sync_version&lt;/span&gt;
+&lt;span class="sd"&gt;        async def spam():&lt;/span&gt;
+&lt;span class="sd"&gt;            return &amp;quot;Hello, async world!&amp;quot;&lt;/span&gt;
+
+&lt;span class="sd"&gt;        # Async usage:&lt;/span&gt;
+&lt;span class="sd"&gt;        result = await spam()&lt;/span&gt;
+
+&lt;span class="sd"&gt;        # Synchronous usage:&lt;/span&gt;
+&lt;span class="sd"&gt;        result = spam.sync()&lt;/span&gt;
+
+&lt;span class="sd"&gt;    Args:&lt;/span&gt;
+&lt;span class="sd"&gt;        func (coroutine): The async function to wrap.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    Returns:&lt;/span&gt;
+&lt;span class="sd"&gt;        coroutine: The original async function with an added `.sync` attribute.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;iscoroutinefunction&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@functools&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wraps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;asyncio&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new_event_loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run_until_complete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="n"&gt;func&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sync&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;func&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="snippets"></category><category term="python"></category><category term="async"></category><category term="decorator"></category><category term="Guido"></category></entry><entry><title>Streamlit Scroll Navigation</title><link href="https://msull.github.io/streamlit-scroll-navigation.html" rel="alternate"></link><published>2024-11-18T09:00:00-08:00</published><updated>2024-11-18T09:00:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-18:/streamlit-scroll-navigation.html</id><content type="html">&lt;p&gt;Nice Streamlit component for scrolling / tracking position on a page&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/snpm/streamlit-scroll-navigation/"&gt;Github&lt;/a&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="streamlit"></category></entry><entry><title>1password CLI Examples</title><link href="https://msull.github.io/1password-cli-examples.html" rel="alternate"></link><published>2024-11-15T12:00:00-08:00</published><updated>2024-11-15T12:00:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-15:/1password-cli-examples.html</id><summary type="html">&lt;p&gt;Snippets for using the 1password CLI tool; learned about this tool today while reading
+a &lt;a href="https://simonwillison.net/2024/Nov/15/recraft-v3/#atom-everything"&gt;blog post&lt;/a&gt; by Simon Willison -- very handy tool.&lt;/p&gt;
+&lt;p&gt;Remainder of this post written by Claude 3.5 Sonnet V2 as a quick reference.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get API token from 1Password and use in API call&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;API_TOKEN …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Snippets for using the 1password CLI tool; learned about this tool today while reading
+a &lt;a href="https://simonwillison.net/2024/Nov/15/recraft-v3/#atom-everything"&gt;blog post&lt;/a&gt; by Simon Willison -- very handy tool.&lt;/p&gt;
+&lt;p&gt;Remainder of this post written by Claude 3.5 Sonnet V2 as a quick reference.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get API token from 1Password and use in API call&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;API_TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Service API Key&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;password&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--format&lt;span class="w"&gt; &lt;/span&gt;json&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;jq&lt;span class="w"&gt; &lt;/span&gt;-r&lt;span class="w"&gt; &lt;/span&gt;.value&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+curl&lt;span class="w"&gt; &lt;/span&gt;https://api.example.com/v1/endpoint&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+-H&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+-H&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Authorization: Bearer &lt;/span&gt;&lt;span class="nv"&gt;$API_TOKEN&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;quot;param1&amp;quot;: &amp;quot;value1&amp;quot;,&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;quot;param2&amp;quot;: &amp;quot;value2&amp;quot;&lt;/span&gt;
+&lt;span class="s1"&gt;}&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# View all items in a vault&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;list&lt;span class="w"&gt; &lt;/span&gt;--vault&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Personal&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get a password (outputs only the password value)&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;MyLogin&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;password
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get a password in raw format (useful for scripts)&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;MyLogin&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;password&lt;span class="w"&gt; &lt;/span&gt;--format&lt;span class="w"&gt; &lt;/span&gt;json&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;jq&lt;span class="w"&gt; &lt;/span&gt;-r&lt;span class="w"&gt; &lt;/span&gt;.value
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Create a new login item&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;--category&lt;span class="w"&gt; &lt;/span&gt;login&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--title&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;New Service&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--vault&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Personal&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="nv"&gt;username&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;user@example.com&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="nv"&gt;password&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;mysecret123&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="nv"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://example.com&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generate and store a new password&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;--category&lt;span class="w"&gt; &lt;/span&gt;password&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--title&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Generated Password&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--generate-password
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Get all fields for an item&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;MyLogin&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Create a secure note&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;--category&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Secure Note&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--title&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Project Notes&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+--vault&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Work&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;notesPlain[text]=&amp;quot;Important project details...&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Use secrets in environment variables&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;op&lt;span class="w"&gt; &lt;/span&gt;signin&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DB_PASSWORD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Database&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;password&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;API_KEY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;API Keys&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;key&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Read SSH keys or certificates&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;SSH Key&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--fields&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;private_key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# List all vaults&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;vault&lt;span class="w"&gt; &lt;/span&gt;list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Search for items&lt;/span&gt;
+op&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;list&lt;span class="w"&gt; &lt;/span&gt;--query&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;database&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here's the revised version of your update, with improved grammar, flow, and formatting:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Update on 2025-01-08&lt;/h2&gt;
+&lt;p&gt;Recently, I integrated the CLI usage of the &lt;code&gt;op&lt;/code&gt; tool into a Python Streamlit app that I run locally on my MacBook. This integration allows me to securely manage Google credentials and an OAuth token, enabling programmatic access to my Google Calendars. Here's how I achieved it:&lt;/p&gt;
+&lt;h3&gt;Python Code Example&lt;/h3&gt;
+&lt;p&gt;The following code snippet demonstrates how I retrieve credentials and tokens from 1Password, use them to initialize a calendar access class, and then update the token back to 1Password if it changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;tempfile&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;NamedTemporaryFile&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;subprocess&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;supersullytools.gcalendar_access&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;GoogleCalendarDataAccess&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;get_calendar_access&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Fetches Google OAuth credentials from 1Password, writes them to temporary files,&lt;/span&gt;
+&lt;span class="sd"&gt;    initializes GoogleCalendarDataAccess, and updates the token back to 1Password if needed.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;op_get_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;field_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;        Uses the 1Password CLI (`op`) to retrieve the raw JSON content of a specified field.&lt;/span&gt;
+&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;item&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;get&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;--fields&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;field_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;--format&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;json&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;capture_output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loads&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="c1"&gt;# Returns the field&amp;#39;s raw JSON content&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;op_set_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;field_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;new_value&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;        Updates the content of a specific field in a 1Password item using the `op` CLI.&lt;/span&gt;
+&lt;span class="sd"&gt;        Returns True if successful, otherwise False.&lt;/span&gt;
+&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;item&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;edit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;item_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;field_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;=&lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;new_value&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;capture_output&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;check&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CalledProcessError&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Error updating 1Password field: &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Retrieve the credentials and token JSON from 1Password&lt;/span&gt;
+    &lt;span class="n"&gt;creds_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;op_get_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ONEPASS_GOOGLE_CREDS_ITEM&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;  &lt;span class="c1"&gt;# Adjust item name/ID as needed&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;notesPlain&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;# json str stored in a Secure Note&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;token_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;op_get_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+        &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ONEPASS_GOOGLE_TOKEN_ITEM&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;  &lt;span class="c1"&gt;# Adjust item name/ID as needed&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;notesPlain&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;# json str stored in a Secure Note&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# Write the credentials and token to temporary files&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;NamedTemporaryFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;w+&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;tmp_file1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;NamedTemporaryFile&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;w+&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;creds_json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;temp_credentials_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tmp_file1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+
+        &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token_json&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;flush&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;temp_token_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
+
+        &lt;span class="c1"&gt;# Initialize the GoogleCalendarDataAccess class&lt;/span&gt;
+        &lt;span class="n"&gt;calendar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;GoogleCalendarDataAccess&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;credentials_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;temp_credentials_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;token_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;temp_token_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;default_calendar_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;EVENT_CALENDAR_ID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+            &lt;span class="n"&gt;fallback_timezone&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;America/Los_Angeles&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c1"&gt;# Check if the token was updated and save it back to 1Password if necessary&lt;/span&gt;
+        &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seek&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;updated_token_json&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tmp_file2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;updated_token_json&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;token_json&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;op_set_field&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ONEPASS_GOOGLE_TOKEN_ITEM&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;  &lt;span class="c1"&gt;# Adjust item name/ID as needed&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;notesPlain&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="c1"&gt;# json str stored in a Secure Note&lt;/span&gt;
+                &lt;span class="n"&gt;updated_token_json&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;calendar&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;A really cool benefit of this is that it automatically integrates into the 1password Biometrics / fingerprint scanner on my Macbook when it needs to regain access to the protected items&lt;/p&gt;
+&lt;p&gt;&lt;img alt="1passbio.png" src="https://msull.github.io/1passbio.png"&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="1password"></category></entry><entry><title>Streamlit Sortables</title><link href="https://msull.github.io/streamlit-sortables.html" rel="alternate"></link><published>2024-11-14T15:05:00-08:00</published><updated>2024-11-14T15:05:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-14:/streamlit-sortables.html</id><content type="html">&lt;p&gt;Another interesting streamlit component, letting you sort / hide items in a list with a nice UI.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/ohtaman/streamlit-sortables"&gt;Github&lt;/a&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="streamlit"></category></entry><entry><title>Streamlit Image Cropper</title><link href="https://msull.github.io/streamlit-image-cropper.html" rel="alternate"></link><published>2024-11-14T12:00:00-08:00</published><updated>2024-11-14T12:00:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-14:/streamlit-image-cropper.html</id><content type="html">&lt;p&gt;Interesting Streamlit component I came across; could be useful next time I try to build software to automate the Dinghy
+score results.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/turner-anderson/streamlit-cropper"&gt;Github&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A streamlit custom component for easy image cropping&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="img" src="https://github.com/turner-anderson/streamlit-cropper/raw/master/demo.gif"&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="streamlit"></category></entry><entry><title>Basic post examples</title><link href="https://msull.github.io/basic-post-examples.html" rel="alternate"></link><published>2024-11-14T00:00:00-08:00</published><updated>2024-11-14T00:00:00-08:00</updated><author><name>Sully</name></author><id>tag:msull.github.io,2024-11-14:/basic-post-examples.html</id><content type="html">&lt;p&gt;Learning how to use Pelican. This is an example / reference page for linking and formatting.&lt;/p&gt;
+&lt;p&gt;See below intra-site link examples in Markdown format.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://msull.github.io/streamlit-image-cropper.html"&gt;a link relative to the current file&lt;/a&gt;
+&lt;a href="https://msull.github.io/streamlit-image-cropper.html"&gt;a link relative to the content root&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Icon" src="https://msull.github.io/example-attached-image/icon.png"&gt;&lt;/p&gt;</content><category term="snippets"></category><category term="pelican"></category><category term="markdown"></category></entry><entry><title>More examples</title><link href="https://msull.github.io/more-examples.html" rel="alternate"></link><published>2024-11-14T00:00:00-08:00</published><updated>2024-11-14T00:00:00-08:00</updated><author><name>ChatGPT 4o</name></author><id>tag:msull.github.io,2024-11-14:/more-examples.html</id><summary type="html">&lt;p&gt;A quick overview of markdown formatting in Pelican.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Example Markdown for Pelican Blog&lt;/h1&gt;
+&lt;p&gt;Welcome to this example markdown file! If you're setting up a Pelican blog, it's helpful to understand how various formatting options will render in your new blog post. Here's a showcase of all the essential elements you can use with Pelican, including some Pelican-specific features.&lt;/p&gt;
+&lt;h2&gt;Headings&lt;/h2&gt;
+&lt;p&gt;You can use different levels of headings to structure your content:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;# Heading 1&lt;/span&gt;
+&lt;span class="gu"&gt;## Heading 2&lt;/span&gt;
+&lt;span class="gu"&gt;### Heading 3&lt;/span&gt;
+&lt;span class="gu"&gt;#### Heading 4&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Examples&lt;/h3&gt;
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h2&gt;Text Formatting&lt;/h2&gt;
+&lt;p&gt;Make your text stand out using basic Markdown formatting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bold text&lt;/strong&gt;: &lt;code&gt;**Bold**&lt;/code&gt; → &lt;strong&gt;Bold&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Italic text&lt;/em&gt;: &lt;code&gt;*Italic*&lt;/code&gt; → &lt;em&gt;Italic&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;~~Strikethrough~~: &lt;code&gt;~~Strikethrough~~&lt;/code&gt; → ~~Strikethrough~~&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Inline code&lt;/code&gt;: Use backticks (&lt;code&gt;) for inline code:&lt;/code&gt;print("Hello, Pelican!")`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Blockquotes&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can create blockquotes to emphasize important points.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Use &lt;code&gt;&amp;gt;&lt;/code&gt; followed by the text to create a blockquote, for example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;&amp;gt; &lt;/span&gt;&lt;span class="ge"&gt;This is a blockquote.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Lists&lt;/h2&gt;
+&lt;h3&gt;Unordered List&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Sub-item 2.1&lt;/li&gt;
+&lt;li&gt;Sub-item 2.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ordered List&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Sub-item 2.1&lt;/li&gt;
+&lt;li&gt;Sub-item 2.2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Links&lt;/h2&gt;
+&lt;p&gt;Include links using:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[&lt;span class="nt"&gt;OpenAI&lt;/span&gt;](&lt;span class="na"&gt;https://www.openai.com&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://www.openai.com"&gt;OpenAI&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Images&lt;/h2&gt;
+&lt;p&gt;Add images to your posts using:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;![&lt;span class="nt"&gt;Alt text&lt;/span&gt;](&lt;span class="na"&gt;https://example.com/image.jpg&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Pelican Logo" src="https://docs.getpelican.com/en/latest/_static/pelican-logo.svg"&gt;&lt;/p&gt;
+&lt;h2&gt;Code Blocks&lt;/h2&gt;
+&lt;p&gt;You can add code blocks using triple backticks or indentation:&lt;/p&gt;
+&lt;pre&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Example Python code&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello, Pelican!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/pre&gt;
+
+&lt;h3&gt;Output&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Example Python code&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello, Pelican!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Horizontal Rules&lt;/h2&gt;
+&lt;p&gt;Create horizontal rules to separate sections:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;Tables&lt;/h2&gt;
+&lt;p&gt;Use tables to present data:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;| Header 1  | Header 2  |
+| --------- | --------- |
+| Row 1 Col 1 | Row 1 Col 2 |
+| Row 2 Col 1 | Row 2 Col 2 |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Header 1&lt;/th&gt;
+&lt;th&gt;Header 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Row 1 Col 1&lt;/td&gt;
+&lt;td&gt;Row 1 Col 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Row 2 Col 1&lt;/td&gt;
+&lt;td&gt;Row 2 Col 2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Pelican-Specific Features&lt;/h2&gt;
+&lt;h3&gt;Metadata&lt;/h3&gt;
+&lt;p&gt;In Pelican, metadata is added to the top of the markdown file for each post:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Title: Example Post
+Date: 2024-11-14
+Category: Markdown Tutorial
+Tags: pelican, markdown, tutorial
+Slug: example-post
+Author: Your Name
+Summary: A quick overview of markdown formatting in Pelican.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Pelican Plugins&lt;/h3&gt;
+&lt;p&gt;You can use various plugins to enhance your Pelican posts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tipue Search&lt;/strong&gt;: Add search functionality to your site.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Neighbors&lt;/strong&gt;: Easily link to previous/next articles within the template.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summary&lt;/strong&gt;: Control the summary of your posts that are displayed on the main page by adding the &lt;code&gt;&amp;lt;!-- PELICAN_END_SUMMARY --&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Inserting Summary Split&lt;/h3&gt;
+&lt;p&gt;Control how much of your article shows up in a summary view by using the Pelican-specific tag:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;This is the beginning of the article, and it will appear in the summary.
+
+&amp;lt;!-- PELICAN_END_SUMMARY --&amp;gt;
+
+This part appears only in the full article.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Embedding Media&lt;/h2&gt;
+&lt;h3&gt;YouTube Videos&lt;/h3&gt;
+&lt;p&gt;Embed a YouTube video in Pelican using an HTML snippet:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;560&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;315&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://www.youtube.com/embed/dQw4w9WgXcQ&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;frameborder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;0&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;allowfullscreen&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;iframe&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;Footnotes&lt;/h2&gt;
+&lt;p&gt;Add footnotes to provide additional information without cluttering the text:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;This is a statement with a footnote.[^1]
+
+[&lt;span class="nl"&gt;^1&lt;/span&gt;]: &lt;span class="na"&gt;This is the footnote text.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a statement with a footnote.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2&gt;Math Equations&lt;/h2&gt;
+&lt;p&gt;Pelican also allows you to include LaTeX-style math expressions if you enable math rendering:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$$
+e^{i \pi} + 1 = 0
+$$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;$$
+e^{i \pi} + 1 = 0
+$$&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This example covers the main formatting features you can use in Pelican for writing blog posts. You can mix and match these elements to create rich and engaging content for your readers. Feel free to experiment with different markdown and Pelican-specific options to see what best fits your style!&lt;/p&gt;
+&lt;p&gt;Happy blogging with Pelican!&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;This is the footnote text.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="snippets"></category><category term="pelican"></category><category term="markdown"></category><category term="tutorial"></category></entry></feed>

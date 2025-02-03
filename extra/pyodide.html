@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.3/full/pyodide.js"></script>
+  </head>
+
+  <body>
+    <p>
+      You can execute any Python code. Just enter something in the box below and
+      click the button.
+    </p>
+    <textarea id="code" style="width: 100%;" rows="10" >df.shape</textarea>
+    <button onclick="evaluatePython()">Run</button>
+    <br />
+    <br />
+    <div>Select a data file:</div>
+    <input type="file" id="fileInput" />
+    <br />
+    <br />
+    <p>
+      Install a Python package:
+    </p>
+    <textarea id="package" style="width: 100%;" rows="1" placeholder="e.g. requests"></textarea>
+    <button onclick="installPackage()">Install Package</button>
+    <br />
+    <br />
+    <div>Output:</div>
+    <textarea id="output" style="width: 100%;" rows="10" disabled></textarea>
+
+    <script>
+      const output = document.getElementById("output");
+      const code = document.getElementById("code");
+      const fileInput = document.getElementById("fileInput");
+      let fileData = null;
+
+      function addToOutput(s) {
+        output.value += ">>>" + code.value + "\n" + s + "\n";
+      }
+
+      output.value = "Initializing...\n";
+      // Initialize Pyodide
+      let pyodide = null;
+      async function main() {
+        pyodide = await loadPyodide();
+        // Load micropip first
+        await pyodide.loadPackage("micropip");
+        // load pandas by default
+        await pyodide.loadPackage("pandas");
+        output.value += "Ready!\n";
+        return pyodide;
+      }
+      let pyodideReadyPromise = main();
+
+      // Read the selected file and store its content
+      fileInput.addEventListener('change', function() {
+        let file = this.files[0];
+        let reader = new FileReader();
+        reader.onload = function() {
+          fileData = reader.result;
+        };
+        reader.readAsText(file);
+      });
+
+      async function installPackage() {
+        await pyodideReadyPromise;
+        let packageName = document.getElementById("package").value;
+        if(!packageName.trim()){
+          output.value += "Please enter a package name.\n";
+          return;
+        }
+        try {
+          output.value += `Installing ${packageName}...\n`;
+          await pyodide.runPythonAsync(`\nimport micropip\nawait micropip.install("${packageName}")\n`);
+          output.value += "Installation complete!\n";
+        } catch (err) {
+          addToOutput(err);
+        }
+      }
+
+      async function evaluatePython() {
+        let pyodide = await pyodideReadyPromise;
+        try {
+          if (fileData != null) {
+            output.value += "Loading file into `df`...";
+            // Pass fileData into Pyodide and create 'df'
+            pyodide.globals.set('file_content', fileData);
+            pyodide.runPython(`\nimport pandas as pd\nfrom io import StringIO\ndf = pd.read_csv(StringIO(file_content))\n`);
+            output.value += "loaded!\n";
+          }
+          let code_response = pyodide.runPython(code.value);
+          addToOutput(code_response);
+        } catch (err) {
+          addToOutput(err);
+        }
+      }
+    </script>
+  </body>
+</html>
