@@ -13,3 +13,4 @@ Title: Tools and Toys
 
 * [Pyodide](/extra/pyodide) Simple Pyodide page for quick python execution
 * [Simple Image Editor](/extra/imageEdit) Simple in-browser (Streamlit / Stlite) image editor
+* [AI Convo Formatter](/extra/aiconvo) Convert the JSON from my custom storage format into HTML for easy display

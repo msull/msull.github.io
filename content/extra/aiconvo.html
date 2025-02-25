@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Conversation Formatter</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        pre {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .preview {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            background-color: white;
+            overflow-y: auto;
+            min-height: 200px;
+            max-height: 600px;
+        }
+        .message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .user {
+            background-color: #e9f5ff;
+            border-left: 5px solid #2196F3;
+        }
+        .assistant {
+            background-color: #f0f7f0;
+            border-left: 5px solid #4CAF50;
+        }
+        .system {
+            background-color: #fff8e1;
+            border-left: 5px solid #FFC107;
+            font-style: italic;
+        }
+        .metadata {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
+        }
+        .copy-btn {
+            background-color: #2196F3;
+            font-size: 14px;
+            float: right;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 4px 4px 0 0;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Conversation Formatter</h1>
+    <p>Paste your JSON conversation data below and click "Format" to generate formatted HTML for your blog.</p>
+
+    <textarea id="jsonInput" placeholder="Paste your JSON data here..."></textarea>
+    <button id="formatBtn">Format Conversation</button>
+    <button id="copyHtmlBtn" class="copy-btn">Copy HTML</button>
+
+    <div class="tabs">
+        <div class="tab active" id="previewTab">Preview</div>
+        <div class="tab" id="htmlTab">HTML</div>
+    </div>
+
+    <div class="tab-content active" id="previewContent">
+        <div class="preview" id="conversationPreview"></div>
+    </div>
+
+    <div class="tab-content" id="htmlContent">
+        <pre><code id="htmlOutput"></code></pre>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jsonInput = document.getElementById('jsonInput');
+            const formatBtn = document.getElementById('formatBtn');
+            const copyHtmlBtn = document.getElementById('copyHtmlBtn');
+            const conversationPreview = document.getElementById('conversationPreview');
+            const htmlOutput = document.getElementById('htmlOutput');
+            const previewTab = document.getElementById('previewTab');
+            const htmlTab = document.getElementById('htmlTab');
+            const previewContent = document.getElementById('previewContent');
+            const htmlContent = document.getElementById('htmlContent');
+
+            // Tab switching
+            previewTab.addEventListener('click', function() {
+                previewTab.classList.add('active');
+                htmlTab.classList.remove('active');
+                previewContent.classList.add('active');
+                htmlContent.classList.remove('active');
+            });
+
+            htmlTab.addEventListener('click', function() {
+                htmlTab.classList.add('active');
+                previewTab.classList.remove('active');
+                htmlContent.classList.add('active');
+                previewContent.classList.remove('active');
+            });
+
+            // Format button click
+            formatBtn.addEventListener('click', function() {
+                try {
+                    const jsonData = JSON.parse(jsonInput.value);
+                    formatConversation(jsonData);
+                } catch (e) {
+                    conversationPreview.innerHTML = `<div class="message system">Error parsing JSON: ${e.message}</div>`;
+                    htmlOutput.textContent = '';
+                }
+            });
+
+            // Copy HTML button click
+            copyHtmlBtn.addEventListener('click', function() {
+                const html = htmlOutput.textContent;
+                if (html) {
+                    navigator.clipboard.writeText(html)
+                        .then(() => {
+                            const originalText = copyHtmlBtn.textContent;
+                            copyHtmlBtn.textContent = 'Copied!';
+                            setTimeout(() => {
+                                copyHtmlBtn.textContent = originalText;
+                            }, 2000);
+                        })
+                        .catch(err => {
+                            console.error('Failed to copy: ', err);
+                        });
+                }
+            });
+
+            // Format conversation function
+            function formatConversation(data) {
+                // Reset containers
+                conversationPreview.innerHTML = '';
+
+                // Check if data contains prompt and response
+                if (!data.prompt || !data.response) {
+                    conversationPreview.innerHTML = '<div class="message system">Invalid JSON structure. Expected "prompt" and "response" fields.</div>';
+                    return;
+                }
+
+                let formattedHtml = '<div class="ai-conversation">';
+
+                // Format the conversation
+                data.prompt.forEach(message => {
+                    const role = message.role;
+                    const content = formatMessageContent(message.content);
+
+                    const messageHtml = `
+                        <div class="message ${role}">
+                            <div class="role">${role.toUpperCase()}</div>
+                            <div class="content">${content}</div>
+                        </div>
+                    `;
+
+                    formattedHtml += messageHtml;
+                    conversationPreview.innerHTML += messageHtml;
+                });
+
+                // Add response
+                const responseContent = formatMessageContent(data.response.content);
+                const responseHtml = `
+                    <div class="message assistant">
+                        <div class="role">ASSISTANT (RESPONSE)</div>
+                        <div class="content">${responseContent}</div>
+                    </div>
+                    <div>
+                        <div class="metadata">
+                            <div>Input Tokens: ${data.response.input_tokens} | Output Tokens: ${data.response.output_tokens}</div>
+                            <div>LLM: ${data.response.llm_metadata?.llm || 'Unknown'}</div>
+                            <div>Generated At: ${data.response.generated_at || 'Unknown'}</div>
+                            <div>Completion Time: ${data.response.completion_time_ms ? (data.response.completion_time_ms / 1000).toFixed(2) + 's' : 'Unknown'}</div>
+                            <div>Completion Cost: $${data.response.completion_cost?.toFixed(4) || 'Unknown'}</div>
+                        </div>
+                    </div>
+                `;
+
+                formattedHtml += responseHtml;
+                conversationPreview.innerHTML += responseHtml;
+
+                formattedHtml += '</div>';
+
+                // Set HTML output
+                htmlOutput.textContent = formattedHtml;
+            }
+
+            // Format message content helper (handles tools and special formats)
+            function formatMessageContent(content) {
+                if (!content) return '';
+
+                let formattedContent = content
+                    // Convert line breaks to <br> tags
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/\n/g, '<br>')
+                    .replace(/ {2}/g, '&nbsp;&nbsp;')
+
+
+
+                return formattedContent;
+            }
+
+            // Set example data if available
+            if (jsonInput.value.trim() === '' && typeof window.exampleData !== 'undefined') {
+                jsonInput.value = JSON.stringify(window.exampleData, null, 2);
+            }
+        });
+    </script>
+</body>
+</html>

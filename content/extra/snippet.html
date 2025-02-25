@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>/* Essential CSS for the conversation display */
+.ai-conversation {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.message {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.user {
+    background-color: #e9f5ff;
+    border-left: 5px solid #2196F3;
+}
+
+.assistant {
+    background-color: #f0f7f0;
+    border-left: 5px solid #4CAF50;
+}
+
+.system {
+    background-color: #fff8e1;
+    border-left: 5px solid #FFC107;
+    font-style: italic;
+}
+
+.role {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tool {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: monospace;
+}
+
+.metadata {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+}
+
+pre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+}
+  </style>
+</head>
+<body>
+<div class="ai-conversation">
+  <div class="message user">
+    <div class="role">USER</div>
+    <div class="content">In this environment, you have access to tools to achieve your goal.<br><br>Use a tool by
+      embedding the appropriate tag and JSON:<br><br>
+      <div class="tool">
+        &lt;tool&gt;<br>{<br> "name": "$TOOL_NAME",<br> "reason": "short explanation of why you are using the tool
+        (e.g.,
+        'Getting upcoming events', 'Hiding date columns')",<br> "parameters": {<br> "$PARAMETER_NAME":
+        "$PARAMETER_VALUE"<br> }<br>}<br>&lt;/tool&gt;
+      </div>
+      <br><br>- **Must** include the wrapper tag around the JSON.<br>- **May** include a short message before tool usage
+      but **may not** add content after.<br>- You can call multiple tools in parallel by including multiple `
+      &lt;tool&gt;` blocks.<br>- You can use additional tools after receiving results (e.g., look up an ID before
+      another
+      operation).<br>- Use your first response to plan how you will accomplish the task (including any branching logic
+      and multiple steps), then proceed.<br><br>Available tools:<br><br>
+      <available_tools><br>[<br> {<br> "name": "ListFiles",<br> "parameters": {<br> "recursive": {<br> "default":
+        false,<br> "description": "Set to True to list files recursively; be careful with this option if there may be
+        lots of files, as it can overwhelm your system",<br> "type": "boolean"<br> },<br> "path": {<br> "anyOf": [<br>
+        {<br> "type": "string"<br> },<br> {<br> "type": "null"<br> }<br> ],<br> "default": null,<br> "description":
+        "Sub-path within the repository to list files from."<br> }<br> }<br> },<br> {<br> "name": "ReadFile",<br>
+        "parameters": {<br> "file_path": {<br> "description": "Path to the file within the repository.",<br> "type":
+        "string"<br> }<br> }<br> },<br> {<br> "name": "WriteFile",<br> "parameters": {<br> "file_path": {<br>
+        "description": "Path where the new file will be created.",<br> "type": "string"<br> },<br> "content": {<br>
+        "description": "Content to write into the new file.",<br> "type": "string"<br> },<br> "overwrite": {<br>
+        "default": false,<br> "description": "Completely replace any existing content at the path",<br> "type":
+        "boolean"<br> }<br> },<br> "description": "Write a new file that either doesn't exist or overwrites an
+        existing file."<br> },<br> {<br> "name": "CreateDirectory",<br> "parameters": {<br> "directory_path": {<br>
+        "description": "Path to the new directory within the repository.",<br> "type": "string"<br> }<br> }<br> },<br>
+        {<br> "name": "AddToFile",<br> "parameters": {<br> "file_path": {<br> "description": "Path to the file to add
+        content to.",<br> "type": "string"<br> },<br> "content": {<br> "description": "Content to add to the
+        file.",<br> "type": "string"<br> },<br> "insert_at_line": {<br> "anyOf": [<br> {<br> "type": "integer"<br>
+        },<br> {<br> "type": "null"<br> }<br> ],<br> "default": null,<br> "description": "Line number to insert the
+        content at. If not provided, appends to the end."<br> }<br> }<br> },<br> {<br> "name": "DeleteFile",<br>
+        "parameters": {<br> "file_path": {<br> "description": "Path to the file to delete.",<br> "type": "string"<br>
+        }<br> }<br> },<br> {<br> "name": "MoveFile",<br> "parameters": {<br> "source_path": {<br> "description":
+        "Current path of the file.",<br> "type": "string"<br> },<br> "destination_path": {<br> "description": "New
+        path for the file.",<br> "type": "string"<br> },<br> "copy_file": {<br> "default": false,<br> "description":
+        "Set to True to copy the file instead of moving it.",<br> "type": "boolean"<br> }<br> }<br> },<br> {<br>
+        "name": "CheckFileExistence",<br> "parameters": {<br> "file_path": {<br> "description": "Path to the file to
+        check within the repository.",<br> "type": "string"<br> }<br> }<br> }<br>]<br></available_tools>
+      <br><br>---<br><br>You are an AI agent, acting as a system administrator and software expert to perform file
+      maintenance and a variety of file editing tasks. You have access to tools for interacting with the file system,
+      and your goal is to execute my requests accurately.<br><br>Your objective is to:<br>1. Understand the commands
+      and context of the task assigned to you.<br>2. Read and analyze specific files when needed.<br>3. Use available
+      tools to edit, delete, move, rename, or create files as requested.<br>4. Make logical decisions during tasks to
+      ensure correctness and maintain system integrity.<br>5. Communicate any changes or outcomes of your actions
+      succinctly.<br><br># Guidelines<br>- **Interact Intelligently**: Break down complex tasks into smaller steps.
+      Explain your reasoning clearly before deciding on actions, especially if there are potential multiple
+      approaches.<br>- **Be Mindful of Context**: Consider the impact of making system or file changes. Avoid
+      conflicts, double-check the context given, and make decisions that will protect data integrity.<br>- **Edge
+      Cases**: Describe any edge cases you identify during the tasks and provide options for resolution when
+      necessary.<br>- **Ask When Uncertain**: If there are crucial details missing or a decision has multiple
+      possibilities, ask specific follow-up questions to clarify.<br><br># Steps<br>1. **Understand the File
+      Maintenance/Editing Task**: Before taking action, ensure you understand clearly what is being asked—whether it
+      is organizing, modifying, combining, renaming, or other tasks.<br>2. **Access the File(s)**: Extract relevant
+      information from the file system. When accessing a file, note any particular concerns such as file permissions
+      or dependencies.<br>3. **Reason Out Steps Before Action**: For each task, break it into sub-steps and outline
+      the reasoning behind these steps:<br> - Consider dependencies or any related files.<br> - Ensure no unintended
+      consequences (such as accidental data loss).<br>4. **Perform Actions**: Use the tools you have to execute the
+      necessary changes.<br>5. **Report Back**: After completing the task, summarize the actions taken and the final
+      output.<br><br># Notes<br>- In cases where conflicting instructions or unclear information are provided, include
+      your assumptions in the reasoning and summarize what you are doing to mitigate conflicts.<br>- Ensure your
+      summaries and justifications are clear to facilitate review or approval for critical changes.<br>
+      <important><br>Never echo the contents of files back to the users in whole or large part -- answer specific
+        questions as asked.<br></important>
+      <br><br>---<br><br>To begin, simply use the `BeginChatOperation` tool with the startup phrase "OrangeCreamsicle"
+      to enable your tools and indicate you are ready to process user messages.
+    </div>
+  </div>
+
+  <div class="message assistant">
+    <div class="role">ASSISTANT</div>
+    <div class="content">I am ready for user messages.<br>
+      <div class="tool">
+        &lt;tool&gt;<br>{<br> "name": "BeginChatOperation",<br> "reason": "Performing startup task"<br> "parameters":
+        {<br>
+        "startup_phrase": "OrangeCreamsicle"<br> }<br>}<br>&lt;/tool&gt;
+      </div>
+    </div>
+  </div>
+
+  <div class="message user">
+    <div class="role">USER</div>
+    <div class="content">
+      <message_from_user><br>How would you accomplish the following using your given tools; for now just make a plan and
+        tell me, do not take any action.<br>Please keep your response concise, as it will be shown to me in a terminal
+        console with limited display size.<br><br>
+        <task><br>examine this repo and then write a readme for this repo<br></task>
+        <br></message_from_user>
+      <br>
+      <system_context>This section provides data injected automatically by the system at runtime.<br>{<br>
+        "current_local_time": "Tuesday, Feb 25 2025 10:07 AM",<br> "user_preference_notes": []<br>}<br></system_context>
+    </div>
+  </div>
+
+  <div class="message assistant">
+    <div class="role">ASSISTANT (RESPONSE)</div>
+    <div class="content">I'll outline a concise plan to create a README for this repository:<br><br>1. First Phase -
+      Information Gathering:<br> - Use ListFiles (recursive) to get full repository structure<br> - Use ReadFile on key
+      files to understand the repository's purpose<br> - Look for existing documentation or config files<br><br>2.
+      Second Phase - Analysis:<br> - Identify main components and structure<br> - Determine the project's purpose from
+      code/files<br> - Note any setup requirements or dependencies<br><br>3. Final Phase - README Creation:<br> - Write
+      a new README.md with standard sections:<br> * Project Overview<br> * Directory Structure<br> *
+      Setup/Installation<br> * Usage<br> * Tools/Dependencies<br> * Any other relevant sections based on
+      findings<br><br>Would you like me to proceed with this plan?
+    </div>
+    <div class="metadata">
+      <div>Input Tokens: 1887 | Output Tokens: 175</div>
+      <div>LLM: Claude 3.5 Sonnet V2</div>
+      <div>Generated At: 2025-02-25T18:07:27.735802Z</div>
+      <div>Completion Time: 4.87s</div>
+      <div>Completion Cost: $0.0083</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
