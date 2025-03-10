@@ -17,7 +17,7 @@
   }
   .CodeMirror {
     width: 600px; /* Fixed width */
-    height: 400px;
+    height: 700px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
@@ -129,19 +129,6 @@
     <div class="editor-wrapper">
       <div id="codeEditor"></div>
     </div>
-    <div class="shortcut-info">
-      <strong>Keyboard shortcuts:</strong>
-      <ul>
-        <li>Run code: <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac)</li>
-        <li>Clear output: <kbd>Alt</kbd> + <kbd>C</kbd> or <kbd>Ctrl</kbd> + <kbd>L</kbd> (or <kbd>Cmd</kbd> +
-          <kbd>L</kbd> on Mac)
-        </li>
-      </ul>
-    </div>
-    <div class="controls">
-      <button onclick="evaluatePython()">Run</button>
-<!--      <button onclick="clearOutput()" style="background-color: #f44336;">Clear Output</button>-->
-    </div>
   </div>
 
   <div class="output-container">
@@ -156,8 +143,17 @@
       <div class="output-label">Return Values/Errors</div>
       <div id="output"></div>
     </div>
-
+    <div class="shortcut-info">
+      <strong>Keyboard shortcuts:</strong>
+      <ul>
+        <li>Run code: <kbd>Ctrl</kbd> + <kbd>Enter</kbd> (or <kbd>Cmd</kbd> + <kbd>Enter</kbd> on Mac)</li>
+        <li>Clear output: <kbd>Alt</kbd> + <kbd>C</kbd> or <kbd>Ctrl</kbd> + <kbd>L</kbd> (or <kbd>Cmd</kbd> +
+          <kbd>L</kbd> on Mac)
+        </li>
+      </ul>
+    </div>
     <div class="controls">
+      <button onclick="evaluatePython()">Run</button>
       <button onclick="clearOutputs()" style="background-color: #f44336;">Clear Outputs</button>
     </div>
   </div>
@@ -178,6 +174,24 @@
       <button onclick="installPackage()">Install Package</button>
     </div>
   </div>
+</div>
+
+<!-- New Quick Install Buttons -->
+<div class="utility-section" style="margin-top: 20px;">
+  <h3>Quick Install Packages</h3>
+  <div style="display: flex; gap: 10px;">
+    <button onclick="quickInstall('requests')">requests</button>
+    <button onclick="quickInstall('matplotlib')">matplotlib</button>
+    <button onclick="quickInstall('scipy')">scipy</button>
+    <button onclick="quickInstall('beautifulsoup4')">beautifulsoup4</button>
+  </div>
+</div>
+
+<!-- Installed Packages Listing -->
+<div class="utility-section" style="margin-top: 20px;">
+  <h3>Installed Packages</h3>
+  <div id="dependenciesList"
+       style="border: 1px solid #ddd; padding: 8px; background-color: #f5f5f5; border-radius: 4px; font-family: monospace; white-space: pre-wrap;"></div>
 </div>
 
 <script>
@@ -286,6 +300,7 @@
         // load pandas by default
         await pyodide.loadPackage("pandas");
         output.innerHTML += "Environment ready! You can now run Python code.\n";
+        updateDependencies();
         return pyodide;
       }
       let pyodideReadyPromise = main();
@@ -305,16 +320,49 @@
       async function installPackage() {
         await pyodideReadyPromise;
         let packageName = document.getElementById("package").value;
-        if(!packageName.trim()){
+        if (!packageName.trim()) {
           output.innerHTML += "Please enter a package name.\n";
           return;
         }
         try {
           output.innerHTML += `Installing ${packageName}...\n`;
-          await pyodide.runPythonAsync(`\nimport micropip\nawait micropip.install("${packageName}")\n`);
+          await pyodide.runPythonAsync(`
+import micropip
+await micropip.install("${packageName}")
+          `);
           output.innerHTML += `Package "${packageName}" installed successfully!\n`;
+          updateDependencies();
         } catch (err) {
           output.innerHTML += `<span style="color: red;">Error: ${err}</span>\n`;
+        }
+      }
+
+      async function quickInstall(pkgName) {
+        await pyodideReadyPromise;
+        try {
+          output.innerHTML += `Installing ${pkgName}...\n`;
+          await pyodide.runPythonAsync(`
+import micropip
+await micropip.install("${pkgName}")
+          `);
+          output.innerHTML += `Package "${pkgName}" installed successfully!\n`;
+          updateDependencies();
+        } catch (err) {
+          output.innerHTML += `<span style="color: red;">Error installing ${pkgName}: ${err}</span>\n`;
+        }
+      }
+
+      function updateDependencies() {
+        try {
+          let deps = pyodide.runPython(`
+import importlib.metadata
+sorted_packages = sorted([f"{dist.metadata.get('Name', '')}=={dist.version}" for dist in importlib.metadata.distributions() if dist.metadata.get('Name')])
+sorted_packages
+          `);
+          let depsArray = deps.toJs ? deps.toJs() : deps;
+          document.getElementById("dependenciesList").innerHTML = depsArray.join('\n');
+        } catch (err) {
+          document.getElementById("dependenciesList").innerHTML = `Error retrieving dependencies: ${err}`;
         }
       }
 
@@ -325,7 +373,11 @@
             output.innerHTML += "Loading file into 'df'...\n";
             // Pass fileData into Pyodide and create 'df'
             pyodide.globals.set('file_content', fileData);
-            pyodide.runPython(`\nimport pandas as pd\nfrom io import StringIO\ndf = pd.read_csv(StringIO(file_content))\n`);
+            pyodide.runPython(`
+import pandas as pd
+from io import StringIO
+df = pd.read_csv(StringIO(file_content))
+            `);
             output.innerHTML += "DataFrame 'df' created successfully!\n";
           }
 
@@ -377,6 +429,9 @@
         }
       }
 
+
+
 </script>
 </body>
+
 </html>
