@@ -1,5 +1,5 @@
 Title: Python Format String Specifiers - A Quick Reference Guide
-Date: 2025-01-16 12:00
+Date: 2025-03-12 12:00
 Category: snippets
 Tags: python, guides
 
