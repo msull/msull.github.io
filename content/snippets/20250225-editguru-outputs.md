@@ -1,6 +1,7 @@
 Title: EditGuru - Sample Outputs
 Date: 2025-02-25 10:40
 Category: Snippets
+Tags: EditGuru
 
 ```shell
 eg "examine this repo and then write a readme for this repo" --max-cost .25 --model anthropic.claude-3-5-sonnet-20241022-v2:0
