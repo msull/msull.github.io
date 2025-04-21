@@ -9,6 +9,11 @@ Title: Tools and Toys
 * [Diagram Editor](https://diagrams.streamlit.app/) -- Chat with LLM to produce PlantUML diagrams in a huge variety of
   styles and formats.
 
+# Games
+
+* [Spider Trap](https://arcade.makecode.com/S76636-37432-93895-69995) - Simple high-score style arcade Spider game, the
+  first game I made with my son.
+
 # Misc
 
 * [Pyodide](/extra/pyodide) Simple Pyodide page for quick python execution
