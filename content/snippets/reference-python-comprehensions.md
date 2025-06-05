@@ -3,7 +3,7 @@ Date: 2025-01-16 12:00
 Category: snippets
 Tags: python, guides
 
-## Python List Comprehensions Demo
+## Python List Comprehensions Reference
 
 List comprehensions provide a concise way to create lists in Python. Here are some practical examples:
 
