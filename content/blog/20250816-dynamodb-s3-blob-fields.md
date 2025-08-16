@@ -1,6 +1,7 @@
 Title: DynamoDB with Automatic Blob Fields in S3
 Date: 2025-08-16 09:45
 Category: Blog
+Tags: Claude Code, DynamoDB, AWS, python, largelanguagemodels
 
 A pattern I like to use for data storage is to keep the metadata in DynamoDB and the larger content in S3, with links in
 the DB item pointing to the corresponding S3 keys. This approach can give DynamoDB queries a huge boost in speed and
