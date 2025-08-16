@@ -49,11 +49,9 @@ One of the biggest benefits of working with Claude is that it’s helping me fin
 feature requests in my library, things I never felt I had to time to work on. Now I just focus on design, testing, and
 implications, while the AI handles most of the coding, and it has been a great accelerator.
 
-## Benchmarking
-
-https://github.com/msull/simplesingletable/blob/main/tests/test_blob_storage_performance.py
-
 ## Benchmark Results (2500 items)
+
+* [Benchmark Script](https://github.com/msull/simplesingletable/blob/main/tests/test_blob_storage_performance.py)
 
 | Metric                   | 1KB   | 4KB   | 16KB   | 32KB   |
 |---------------------------|-------|-------|--------|--------|
