@@ -1,5 +1,5 @@
 Title: DynamoDB with Automatic Blob Fields in S3
-Date: 2024-11-14 14:45
+Date: 2025-08-16 09:45
 Category: Blog
 
 A pattern I like to use for data storage is to keep the metadata in DynamoDB and the larger content in S3, with links in
