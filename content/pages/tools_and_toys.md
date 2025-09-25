@@ -19,3 +19,7 @@ Title: Tools and Toys
 * [Pyodide](/extra/pyodide) Simple Pyodide page for quick python execution
 * [Simple Image Editor](/extra/imageEdit) Simple in-browser (Streamlit / Stlite) image editor
 * [AI Convo Formatter](/extra/aiconvo) Convert the JSON from my custom storage format into HTML for easy display
+* [Flashcard Generator](https://sbgr.co/static/flashcards.html) Generate flashcards from simple stories, geared towards
+  beginner readers.
+  * [Story Library](https://sbgr.co/static/story-library.html)
+  * [1st Grade](https://sbgr.co/static/fc-owsb1.html)
