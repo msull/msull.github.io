@@ -1,0 +1,118 @@
+[input]
+html_selector = "main"
+base_directory = "/home/runner/work/msull.github.io/msull.github.io/blog-output"
+
+[[input.files]]
+path = "pages/about.html"
+url = "/pages/about.html"
+title = "About"
+
+[[input.files]]
+path = "pages/tools-and-toys.html"
+url = "/pages/tools-and-toys.html"
+title = "Tools and Toys"
+
+[[input.files]]
+path = "dynamodb-with-automatic-blob-fields-in-s3.html"
+url = "/dynamodb-with-automatic-blob-fields-in-s3.html"
+title = "DynamoDB with Automatic Blob Fields in S3"
+
+[[input.files]]
+path = "python-enum-reference.html"
+url = "/python-enum-reference.html"
+title = "Python Enum Reference"
+
+[[input.files]]
+path = "frozen-shoulder-recovery-deep-research.html"
+url = "/frozen-shoulder-recovery-deep-research.html"
+title = "Frozen Shoulder Recovery - Deep Research"
+
+[[input.files]]
+path = "editguru-sample-outputs-2.html"
+url = "/editguru-sample-outputs-2.html"
+title = "EditGuru - Sample Outputs #2"
+
+[[input.files]]
+path = "python-format-string-specifiers-a-quick-reference-guide.html"
+url = "/python-format-string-specifiers-a-quick-reference-guide.html"
+title = "Python Format String Specifiers - A Quick Reference Guide"
+
+[[input.files]]
+path = "editguru-sample-outputs.html"
+url = "/editguru-sample-outputs.html"
+title = "EditGuru - Sample Outputs"
+
+[[input.files]]
+path = "streamlit-audix-component.html"
+url = "/streamlit-audix-component.html"
+title = "Streamlit Audix Component"
+
+[[input.files]]
+path = "python-list-comprehensions-reference.html"
+url = "/python-list-comprehensions-reference.html"
+title = "Python List Comprehensions Reference"
+
+[[input.files]]
+path = "streamlit-paste-button.html"
+url = "/streamlit-paste-button.html"
+title = "Streamlit Paste Button"
+
+[[input.files]]
+path = "adding-a-sync-version-to-async-functions.html"
+url = "/adding-a-sync-version-to-async-functions.html"
+title = "Adding a Sync Version to Async Functions"
+
+[[input.files]]
+path = "streamlit-scroll-navigation.html"
+url = "/streamlit-scroll-navigation.html"
+title = "Streamlit Scroll Navigation"
+
+[[input.files]]
+path = "1password-cli-examples.html"
+url = "/1password-cli-examples.html"
+title = "1password CLI Examples"
+
+[[input.files]]
+path = "streamlit-sortables.html"
+url = "/streamlit-sortables.html"
+title = "Streamlit Sortables"
+
+[[input.files]]
+path = "first-blog-post.html"
+url = "/first-blog-post.html"
+title = "First blog post"
+
+[[input.files]]
+path = "streamlit-image-cropper.html"
+url = "/streamlit-image-cropper.html"
+title = "Streamlit Image Cropper"
+
+[[input.files]]
+path = "basic-post-examples.html"
+url = "/basic-post-examples.html"
+title = "Basic post examples"
+
+[[input.files]]
+path = "more-examples.html"
+url = "/more-examples.html"
+title = "More examples"
+
+[[input.files]]
+path = "extra/api_explorer.html"
+url = "extra/api_explorer.html"
+title = ""
+
+[[input.files]]
+path = "extra/pyodide.html"
+url = "extra/pyodide.html"
+title = ""
+
+[[input.files]]
+path = "extra/imageEdit.html"
+url = "extra/imageEdit.html"
+title = ""
+
+[[input.files]]
+path = "extra/aiconvo.html"
+url = "extra/aiconvo.html"
+title = ""

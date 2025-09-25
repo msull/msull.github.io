@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>API Explorer</title>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@stlite/mountable/build/stlite.css"
+  />
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/@stlite/mountable/build/stlite.js"></script>
+<script>
+    stlite.mount({
+      requirements: ["requests"],
+      entrypoint: "streamlit_app.py",
+      files: {
+        "streamlit_app.py": `
+# input code starting here
+import streamlit as st
+import requests
+
+# Initialize session state for API calls
+if "api_calls" not in st.session_state:
+    st.session_state["api_calls"] = []
+
+API_BASE_URL = ""
+API_BASE_URL = "https://czoilxbmjtn6iwfqmai2oqa7xe0hjljj.lambda-url.us-west-2.on.aws"
+
+if not API_BASE_URL:
+    # assume running in pyodide interface and built the url relative to the current host
+    try:
+        import js
+    except ImportError:
+        API_BASE_URL = ""
+    else:
+        proto, remainder = str(js.location).removeprefix("blob:").split("//")
+        hostname_with_port = remainder.split("/")[0]
+
+        API_BASE_URL = f"{proto}//{hostname_with_port}"
+
+st.sidebar.write(API_BASE_URL)
+
+
+def api_call(
+    method,
+    url,
+    headers=None,
+    data=None,
+    json=None,
+    params=None,
+    annotation="",
+    auth_header_name="Authorization",
+    auth_token_prefix="Bearer ",
+):
+    """Wrapper around requests to log API calls and responses."""
+    if headers is None:
+        headers = {}
+
+    display_headers = {**headers}
+    # Include the bearer token from session state
+    if "auth_token" in st.session_state:
+        headers[auth_header_name] = f"{auth_token_prefix}{st.session_state['auth_token']}"
+        display_headers[auth_header_name] = f"{auth_token_prefix}************"
+
+    # Make the API request
+    response = requests.request(method, url, headers=headers, data=data, json=json, params=params)
+
+    # Log the API call and response
+    st.session_state["api_calls"].append(
+        {
+            "annotation": annotation,
+            "request": {
+                "method": method,
+                "url": url,
+                "headers": display_headers,
+                "data": data,
+                "json": json,
+                "params": params,
+            },
+            "response": {
+                "status_code": response.status_code,
+                "headers": dict(response.headers),
+                "body": response.json()
+                if "application/json" in response.headers.get("Content-Type", "")
+                else response.text,
+            },
+        }
+    )
+
+    return response
+
+
+# Move bearer token input to sidebar
+def handle_core_functionality():
+    with st.sidebar:
+        st.write("Auth Token:")
+        st.text_input("Auth Token", value=st.session_state["auth_token"], type="password", key="auth_token_input")
+
+    st.write("## Main Content Area")
+    st.write("Your main application content goes here.")
+
+    # Example API call
+    if st.button("Ping"):
+        api_call(
+            method="GET",
+            url=f"{API_BASE_URL}/api/ping",
+            annotation="Checking if the application is alive",
+            auth_header_name="x-api-key",
+            auth_token_prefix="",
+        )
+        st.write("API call made. See sidebar for details.")
+    if st.button("Get Usage"):
+        response = api_call(
+            method="GET",
+            url=f"{API_BASE_URL}/api/usage",
+            annotation="Fetching usage data",
+            auth_header_name="x-api-key",
+            auth_token_prefix="",
+        )
+        st.write(response.json())
+        st.write("API call made. See sidebar for details.")
+
+
+def main():
+    st.title("API Interaction Showcase")
+    st.write("This app demonstrates API interactions with your backend services.")
+
+    if "auth_token" not in st.session_state:
+        # Bearer token input
+        auth_token = st.text_input("Enter your Auth Token:", type="password")
+        if auth_token:
+            st.session_state["auth_token"] = auth_token
+            st.rerun()
+    else:
+        handle_core_functionality()
+
+    # Display API interactions in sidebar
+    with st.sidebar:
+        st.write("## API Interactions")
+        for idx, call in enumerate(st.session_state["api_calls"]):
+            # Show annotation and response status code
+            st.write(f"### Call {idx + 1}: {call['annotation']}")
+            st.caption(call["request"]["method"] + " " + call["request"]["url"].replace(API_BASE_URL, ""))
+            if st.button("View", key=f"view_{idx}"):
+                view_interaction(idx)
+            st.write(f"Response Status Code: {call['response']['status_code']}")
+
+            # Popovers for request and response
+            col1, col2 = st.columns(2)
+            with col1:
+                with st.popover("Request", use_container_width=True):
+                    st.write(call["request"]["data"] or call["request"]["json"])
+                    if p := call["request"]["params"]:
+                        st.write(p)
+            with col2:
+                with st.popover("Response", use_container_width=True):
+                    st.write(call["response"].get("body"))
+
+
+@st.dialog("API Interaction", width="large")
+def view_interaction(session_idx: int):
+    call = st.session_state["api_calls"][session_idx]
+    st.write(call)
+
+
+if __name__ == "__main__":
+    main()
+
+` // end of code input here!
+      },
+    },
+    document.getElementById("root"))
+
+</script>
+</body>
+</html>
